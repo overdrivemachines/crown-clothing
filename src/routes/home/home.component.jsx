@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import Directory from "../../components/directory/directory.component";
 
 const Home = () => {
@@ -29,7 +30,13 @@ const Home = () => {
     },
   ];
 
-  return <Directory categories={categories} />;
+  return (
+    <div>
+      {/* Render the route that is nested inside of Home component */}
+      <Outlet />
+      <Directory categories={categories} />
+    </div>
+  );
 };
 
 export default Home;
